@@ -1,0 +1,55 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Monicais.DelayedStartup.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultLogConfig" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;log4net&gt;
+    &lt;appender name="consoleAppender" type="log4net.Appender.ConsoleAppender"&gt;
+        &lt;layout type="log4net.Layout.PatternLayout"&gt;
+            &lt;conversionPattern value="%date [%thread] %-5level %logger %ndc%newline%message%newline%newline" /&gt;
+        &lt;/layout&gt;
+    &lt;/appender&gt;
+	
+    &lt;appender name="RollingFile" type="log4net.Appender.RollingFileAppender"&gt;
+        &lt;file type="log4net.Util.PatternString" value="%property{LogFolder}/logginglogging(%property{ProcessType}).log" /&gt;
+        &lt;appendToFile value="true" /&gt;
+        &lt;maximumFileSize value="100KB" /&gt;
+        &lt;maxSizeRollBackups value="4" /&gt;
+		&lt;preserveLogFileNameExtension value="true"/&gt;
+        &lt;layout type="log4net.Layout.PatternLayout"&gt;
+            &lt;conversionPattern value="%date [%thread] %-5level %logger %ndc%newline%message%newline%newline" /&gt;
+        &lt;/layout&gt;
+    &lt;/appender&gt;
+    
+    &lt;root&gt;
+        &lt;level value="INFO" /&gt;
+        &lt;appender-ref ref="consoleAppender" /&gt;
+    &lt;/root&gt;
+&lt;/log4net&gt;</Value>
+    </Setting>
+    <Setting Name="DefaultStartupConfig" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{
+	"Startups": [
+		{
+			"ProgramPath": "",
+			"//ProgramPath": "Must be an escaped string with valid path",
+			"Delay": "1.02:03:04.0050000",
+			"//Delay": "[Day.]Hour:Minute:Second[.Millisecond]",
+			"StartIn": "",
+			"//StartIn": "Default will be the parent directory of {ProgramPath}",
+			"CreateNoWindow": true,
+			"//CreateNoWindow": "Whether create a window or not",
+			"UseShellExecute": false,
+			"//UseShellExecute": "True if executing command with cmd.exe; otherwise, starting directly",
+			"Priority": 32,
+			"//Priority": "Default=Normal; Normal=32; Idle=64; High=128; RealTime=256; BelowNormal=16384; AboveNormal=32768",
+			"WindowStyle": 2,
+			"//WindowStyle": "Default=Minimized; Normal=0; Hidden=1; Minimized=2; Maximized=3",
+			"AsAdminstrator": false,
+			"//AsAdminstrator": "Default=false"
+		}
+	]
+}</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

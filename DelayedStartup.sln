@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelayedStartup", "DelayedStartup\DelayedStartup.csproj", "{F85B72F9-FA1C-4D5A-954F-33D516B6C281}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F85B72F9-FA1C-4D5A-954F-33D516B6C281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85B72F9-FA1C-4D5A-954F-33D516B6C281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85B72F9-FA1C-4D5A-954F-33D516B6C281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85B72F9-FA1C-4D5A-954F-33D516B6C281}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0AE78A4-5344-4FFC-99ED-83D0613A0E7A}
+	EndGlobalSection
+EndGlobal

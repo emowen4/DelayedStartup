@@ -32,20 +32,21 @@ namespace Monicais.DelayedStartup.Properties {
         </layout>
     </appender>
 	
-    <appender name=""RollingFile"" type=""log4net.Appender.RollingFileAppender"">
-        <file type=""log4net.Util.PatternString"" value=""%property{LogFolder}/logginglogging(%property{ProcessType}).log"" />
+    <appender name=""fileAppender"" type=""log4net.Appender.RollingFileAppender"">
+        <file type=""log4net.Util.PatternString"" value=""%property{LogFolder}/logging(%property{ProcessType}).log"" />
         <appendToFile value=""true"" />
         <maximumFileSize value=""100KB"" />
         <maxSizeRollBackups value=""4"" />
-		<preserveLogFileNameExtension value=""true""/>
+        <preserveLogFileNameExtension value=""true""/>
         <layout type=""log4net.Layout.PatternLayout"">
-            <conversionPattern value=""%date [%thread] %-5level %logger %ndc%newline%message%newline%newline"" />
+            <conversionPattern value=""%date [%thread] %-5level %logger {%newline%message%newline}%newline"" />
         </layout>
     </appender>
     
     <root>
         <level value=""INFO"" />
         <appender-ref ref=""consoleAppender"" />
+        <appender-ref ref=""fileAppender"" />
     </root>
 </log4net>")]
         public string DefaultLogConfig {

@@ -1,14 +1,13 @@
 ﻿using log4net;
 using log4net.Config;
-using System;
 using System.IO;
-using System.IO.Compression;
 
 namespace Monicais.DelayedStartup
 {
     public static class Config
     {
-        internal static readonly string ProgramFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+        internal static readonly string ProgramFile = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        internal static readonly string ProgramFolder = Path.GetDirectoryName(ProgramFile);
         internal static readonly string DefaultConfigFile = Path.Combine(ProgramFolder, "config.default.gz");
         internal static readonly string ConfigFolder = Path.Combine(ProgramFolder, "Configs");
         internal static readonly string StartupConfigFile = Path.Combine(ConfigFolder, "startup.config");
@@ -17,9 +16,10 @@ namespace Monicais.DelayedStartup
 
         internal static readonly bool IsAdminstrator = Privilege.IsAdminstrator();
 
-        internal static ILog StartupLog;
+        internal static ILog Log;
 
-        static Config () {
+        static Config()
+        {
             Directory.SetCurrentDirectory(ProgramFolder);
         }
 
@@ -47,7 +47,7 @@ namespace Monicais.DelayedStartup
             GlobalContext.Properties["LogFolder"] = LogFolder;
             GlobalContext.Properties["ProcessType"] = IsAdminstrator ? "admin" : "user";
             XmlConfigurator.ConfigureAndWatch(new FileInfo(LogConfigFile));
-            StartupLog = LogManager.GetLogger("Startup Log");
+            Log = LogManager.GetLogger("Startup Log");
         }
     }
 }

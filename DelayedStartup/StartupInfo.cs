@@ -49,13 +49,13 @@ namespace Monicais.DelayedStartup
                             WindowStyle = WindowStyle,
 
                         };
-                        Config.StartupLog.Info(ToString());
+                        Config.Log.Info(ToString());
                         var process = Process.Start(info);
                         process.PriorityClass = Priority;
                     }
                     catch (Exception ex)
                     {
-                        Config.StartupLog.Error($"{ToString()}\n{ex.ToString()}");
+                        Config.Log.Error($"{ToString()}\n{ex.ToString()}");
                     }
                 }).Start();
             }
@@ -132,7 +132,7 @@ namespace Monicais.DelayedStartup
             }
             catch (Exception ex)
             {
-                Config.StartupLog.Error($"Error while parsing StartupInfos.\n{ex.ToString()}");
+                Config.Log.Error($"Error while parsing StartupInfos.\n{ex.ToString()}");
             }
             return list;
         }
